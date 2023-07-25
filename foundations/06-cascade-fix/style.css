@@ -2,26 +2,32 @@ body {
   font-family: Arial, Helvetica, sans-serif;
 }
 
-.para,
-.small-para {
+/* Took out the div selector since it's not needed in this case. 
+Placed this block of code at the beginning so the font-weight of
+the smaller div won't be overrided.*/
+.text {
+  color: rgb(0, 0, 0);
+  font-size: 22px;
+  font-weight: 100;
+}
+
+/* Added the child class to this block because they share the same
+properties. */
+.para, .small-para, .child {
   color: hsl(0, 0%, 0%);
   font-weight: 800;
 }
 
-.small-para {
-  font-size: 14px;
-  font-weight: 800;
-}
 
 .para {
   font-size: 22px;
 }
 
-.confirm {
-  background: green;
-  color: white;
-  font-weight: bold;
-} 
+/* Added the child class because it's the same font-size for both.
+Took out the font-weight, it's already declared. */
+.small-para, .child {
+  font-size: 14px;
+}
 
 .button {
   background-color: rgb(255, 255, 255);
@@ -29,14 +35,12 @@ body {
   font-size: 20px;
 }
 
-.child {
-  color: rgb(0, 0, 0);
-  font-weight: 800;
-  font-size: 14px;
-}
+/* Instead of .confirm used the id#confirm-button so it can be more
+specific. */
+#confirm-button {
+  background: green;
+  color: white;
+  font-weight: bold;
+} 
 
-div.text {
-  color: rgb(0, 0, 0);
-  font-size: 22px;
-  font-weight: 100;
-}
+
